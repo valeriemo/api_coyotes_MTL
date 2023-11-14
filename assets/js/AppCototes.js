@@ -2,10 +2,8 @@ import Coyote from "./Coyote.js";
 
 export default class AppCoyotes {
   constructor() {
-    console.log("AppCoyotes");
-    this.conteneur = document.querySelector("[data-meteo]");
     this.tableauCoyotes = [];
-
+    
     this.init();
   }
 
