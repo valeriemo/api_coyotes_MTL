@@ -24,6 +24,7 @@ export default class AppCoyotes {
       .then((data) => {
         const resultData = data.result;
         const resultCoyotes = resultData.records;
+        console.log(resultCoyotes);
         this.showCoyotes(resultCoyotes);
       })
       .catch((error) => {

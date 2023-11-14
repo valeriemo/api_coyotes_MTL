@@ -1,0 +1,10 @@
+.container{
+    display: flex;
+    flex-wrap: wrap;
+    padding: 50px;
+}
+
+body{
+    margin-top: 40px;
+    margin-left: 40px;
+}

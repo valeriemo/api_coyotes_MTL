@@ -1,10 +1,26 @@
-    <ul class="col-6 text-center bg-primary text-white p-5 ">
-        <li data-template class="no-list-style">
-            <p>Date: {{date}}</p>
-            <p>Heure: {{heure}}</p>
-            <p>Période: {{periode}}</p>
-            <p>Arrondissement: {{lieu}}</p>
-            <p>Nb de coyotes: {{nbCoyote}}</p>
-            <p>Status: {{status}}</p>
-        </li>
-    </ul>
+<div class="col-3">
+    <p>
+        <button
+            class="btn btn-primary"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#id_{{id}}"
+            aria-expanded="false"
+            aria-controls="id_{{id}}"
+        >
+            Date: {{date}}
+        </button>
+    </p>
+
+    <div style="min-height: 120px">
+        <div class="collapse collapse-horizontal" id="id_{{id}}">
+            <div class="card card-body" style="width: 300px">
+                <p>Heure: {{heure}}</p>
+                <p>Période: {{periode}}</p>
+                <p>Arrondissement: {{lieu}}</p>
+                <p>Nb de coyotes: {{nbCoyote}}</p>
+                <p>Status: {{status}}</p>
+            </div>
+        </div>
+    </div>
+</div>

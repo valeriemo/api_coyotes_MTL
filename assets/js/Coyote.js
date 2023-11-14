@@ -8,6 +8,7 @@ export default class Coyote {
     this.statut = coyote.Statut_animal ? coyote.Statut_animal : "non définit";
     this.latitude = coyote.Lat;
     this.longitude = coyote.Long;
+    this.id = coyote._id;
     this.conteneurHTML = document.querySelector("[data-container]");
 
     this.init();
@@ -29,6 +30,7 @@ console.log(this.statut);
       periode: this.periode,
       lieu: this.arrondissement,
       nbCoyote: this.nbCoyotes,
+      id: this.id,
       // FIXME: //le status ne s'affiche pas dans le html
       statut: this.statut,  
     };
