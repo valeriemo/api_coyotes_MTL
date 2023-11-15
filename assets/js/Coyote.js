@@ -22,7 +22,6 @@ export default class Coyote {
   async afficherCoyote() {
     const donnees = await fetch("../../templates/coyotes.html");
     let templateHtml = await donnees.text();
-console.log(this.statut);
 
     const view = {
       date: this.date,
