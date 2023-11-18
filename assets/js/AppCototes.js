@@ -1,17 +1,21 @@
 import Coyote from "./Coyote.js";
+import Map from "./Map.js";
+import coyotesData from "./coyotesData.js";
+
 
 export default class AppCoyotes {
-    constructor() {
-        this.tableauCoyotes = [];
-        this.mapHtml = document.querySelector("[data-map]");
 
+    constructor() {
+        console.log('coucou constru');
+        this.arrayCoyotes = coyotesData;
+        this.mapHtml = document.querySelector("[data-map]");
+        this.map = new Map(); 
         this.init();
     }
 
     init() {
         this.getCoyotes();
     }
-
 
     async getCoyotes() {
         const resourceId = "f5183819-098c-418a-ae2e-d8011970adf5";
@@ -26,7 +30,6 @@ export default class AppCoyotes {
             .then((data) => {
                 const resultData = data.result;
                 const resultCoyotes = resultData.records;
-                console.log(resultCoyotes);
                 this.showCoyotes(resultCoyotes);
             })
             .catch((error) => {
@@ -39,16 +42,7 @@ export default class AppCoyotes {
             // Créer un objet Coyote pour chaque entrée
             const newCoyote = new Coyote(coyote);
             // Ajouter l'objet Coyote au tableauCoyote
-            this.tableauCoyotes.push(newCoyote);
-
-            // Ajouter un marqueur pour chaque coyote à la carte existante
-            const latitude = newCoyote.latitude;
-            const longitude = newCoyote.longitude;
-
-            const html = `<gmp-advanced-marker position="${latitude},${longitude}" title="${coyote.id}">
-            </gmp-advanced-marker>`;
-            console.log(html);
-            this.mapHtml.insertAdjacentHTML("beforeend", html)
+            this.arrayCoyotes.push(newCoyote);
         });
     }
 }

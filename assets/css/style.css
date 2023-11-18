@@ -8,12 +8,14 @@ body{
     margin-top: 40px;
     margin-left: 40px;
 }
-
+img{
+  max-width: 50px;
+}
 
 /* element that contains the map. */ 
-gmp-map {
-  max-width: 500px;
-  max-height: 500px;
+#map{
+  width: 500px;
+  height: 500px;
   margin-left: auto;
   margin-right: auto;
 }
@@ -24,3 +26,11 @@ body {
   height: 100%;
   margin: 0;
   padding: 0;}
+
+  .marker {
+    display: block;
+    border: none;
+    border-radius: 50%;
+    cursor: pointer;
+    padding: 0;
+    }
